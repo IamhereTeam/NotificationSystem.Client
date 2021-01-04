@@ -3,3 +3,14 @@
 ################################################################################
 
 /.vs
+/NS.Client/Modules/NS.Client.Modules.ModuleName/bin/Debug/netcoreapp3.1
+/NS.Client/Modules/NS.Client.Modules.ModuleName/obj
+/NS.Client/NS.Client/bin/Debug/netcoreapp3.1
+/NS.Client/NS.Client/obj
+/NS.Client/NS.Client.Core/bin/Debug/netcoreapp3.1
+/NS.Client/NS.Client.Core/obj
+/NS.Client/Services/NS.Client.Services/bin/Debug/netstandard2.1
+/NS.Client/Services/NS.Client.Services/obj
+/NS.Client/Services/NS.Client.Services.Interfaces/bin/Debug/netstandard2.1
+/NS.Client/Services/NS.Client.Services.Interfaces/obj
+/NS.Client/Tests/NS.Client.Modules.ModuleName.Tests/obj
