@@ -1,8 +1,8 @@
-﻿using NS.Client.Core;
-using NS.Client.Modules.ModuleName.Views;
-using Prism.Ioc;
-using Prism.Modularity;
+﻿using Prism.Ioc;
 using Prism.Regions;
+using NS.Client.Core;
+using Prism.Modularity;
+using NS.Client.Modules.ModuleName.Views;
 
 namespace NS.Client.Modules.ModuleName
 {
@@ -17,12 +17,13 @@ namespace NS.Client.Modules.ModuleName
 
         public void OnInitialized(IContainerProvider containerProvider)
         {
-            _regionManager.RequestNavigate(RegionNames.ContentRegion, "ViewA");
+            _regionManager.RequestNavigate(RegionNames.ContentRegion, "ViewLogin");
         }
 
         public void RegisterTypes(IContainerRegistry containerRegistry)
         {
             containerRegistry.RegisterForNavigation<ViewA>();
+            containerRegistry.RegisterForNavigation<ViewLogin>();
         }
     }
 }

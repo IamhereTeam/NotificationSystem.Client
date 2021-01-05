@@ -5,6 +5,7 @@
     <AssemblyName>NS.Client.Modules.ModuleName</AssemblyName>
   </PropertyGroup>
   <ItemGroup>
+    <PackageReference Include="MahApps.Metro" Version="2.4.3" />
     <PackageReference Include="Prism.Wpf" Version="8.0.0.1909" />
   </ItemGroup>
   <ItemGroup>

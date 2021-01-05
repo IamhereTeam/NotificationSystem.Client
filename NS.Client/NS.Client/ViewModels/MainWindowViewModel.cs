@@ -4,7 +4,7 @@ namespace NS.Client.ViewModels
 {
     public class MainWindowViewModel : BindableBase
     {
-        private string _title = "Prism Application";
+        private string _title = "Notification System Client";
         public string Title
         {
             get { return _title; }
