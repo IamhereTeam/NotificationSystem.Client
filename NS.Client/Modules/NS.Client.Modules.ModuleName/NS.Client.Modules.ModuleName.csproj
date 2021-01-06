@@ -9,6 +9,7 @@
     <PackageReference Include="Prism.Wpf" Version="8.0.0.1909" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\NS.Client.Common\NS.Client.Common.csproj" />
     <ProjectReference Include="..\..\NS.Client.Core\NS.Client.Core.csproj" />
     <ProjectReference Include="..\..\Services\NS.Client.Services.Interfaces\NS.Client.Services.Interfaces.csproj" />
   </ItemGroup>

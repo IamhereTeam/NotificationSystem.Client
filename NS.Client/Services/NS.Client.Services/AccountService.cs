@@ -33,5 +33,15 @@ namespace NS.Client.Services
         {
             throw new System.NotImplementedException();
         }
+
+        public Task<Result<UserModel>> UpdateAcount(UserModel userModel)
+        {
+            throw new System.NotImplementedException();
+        }
+
+        public Task<Result<UserSettingsModel>> UpdateAcountSettings(UserSettingsModel userSettings)
+        {
+            throw new System.NotImplementedException();
+        }
     }
 }

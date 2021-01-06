@@ -21,7 +21,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NS.Client", "NS.Client\NS.C
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NS.Client.Core", "NS.Client\NS.Client.Core\NS.Client.Core.csproj", "{3CCA6CF3-41C8-4653-9F2C-2E1EF5CE3F1B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NS.Client.Services.Mock", "NS.Client.Services.Mock\NS.Client.Services.Mock.csproj", "{5FB18970-30AE-4FFE-A38F-1D97061288BC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NS.Client.Services.Mock", "NS.Client.Services.Mock\NS.Client.Services.Mock.csproj", "{5FB18970-30AE-4FFE-A38F-1D97061288BC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NS.Client.Common", "NS.Client\NS.Client.Common\NS.Client.Common.csproj", "{9052B0E0-8A74-42A3-8086-DC55C921607A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -57,6 +59,10 @@ Global
 		{5FB18970-30AE-4FFE-A38F-1D97061288BC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5FB18970-30AE-4FFE-A38F-1D97061288BC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5FB18970-30AE-4FFE-A38F-1D97061288BC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9052B0E0-8A74-42A3-8086-DC55C921607A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9052B0E0-8A74-42A3-8086-DC55C921607A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9052B0E0-8A74-42A3-8086-DC55C921607A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9052B0E0-8A74-42A3-8086-DC55C921607A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -4,9 +4,55 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:NS.Client.Modules.ModuleName.Views"
-             mc:Ignorable="d" 
+             xmlns:mah="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
+             mc:Ignorable="d" FontSize="15"
              d:DesignHeight="450" d:DesignWidth="800">
-    <Grid>
-        <TextBlock Text="ViewAccount"/>
+  
+    <Grid Height="350" Width="750">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="50"/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        
+        <TextBlock Grid.Row="0" Grid.ColumnSpan="2" Text="Account settings" HorizontalAlignment="Center" FontSize="20"/>
+
+        <TextBox Grid.Row="1" Text="{Binding Account.FirstName}" Margin="20 5" VerticalContentAlignment="Center" FontSize="15"/>
+        <TextBox Grid.Row="2" Text="{Binding Account.LastName}" Margin="20 5" VerticalContentAlignment="Center" FontSize="15"/>
+        <TextBox Grid.Row="3" IsReadOnly="True" Text="{Binding Account.Username}" Margin="20 5" VerticalContentAlignment="Center" FontSize="15"/>
+        <TextBox Grid.Row="4" IsReadOnly="True" Text="{Binding Account.Department.Name}" Margin="20 5" VerticalContentAlignment="Center" FontSize="15"/>
+
+        <Border Grid.Row="1" Grid.Column="1" Grid.RowSpan="4" Margin="20 5" BorderBrush="#FFCCCCCC" BorderThickness="1">
+            <StackPanel>
+                <TextBlock Grid.Row="0" Grid.ColumnSpan="2" Text="Notification Settings" Background="#FFCCCCCC" Height="35" Padding="5"/>
+                <DataGrid CanUserAddRows="False" AutoGenerateColumns="False" HeadersVisibility="None"
+                     ItemsSource="{Binding Path=Account.UserSettings.SubscribedDepartments}">
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Header="Department" Binding="{Binding Name}" IsReadOnly="True"/>
+                        <DataGridCheckBoxColumn Header="Is Enabled" Binding="{Binding IsEnabled}" />
+                    </DataGrid.Columns>
+                </DataGrid>
+            </StackPanel>
+        </Border>
+
+
+        <Button Grid.Row="5" Grid.Column="2" Content="Save" Margin="20 5" Width="200" HorizontalAlignment="Right" 
+                Command="{Binding SaveCommand}"/>
+
+        <TextBlock Grid.Row="5" Grid.Column="0" Margin="20 5" HorizontalAlignment="Left" VerticalAlignment="Center">
+            <Hyperlink Command="{Binding ResetPasswordCommand}">
+                <TextBlock Text="Reset Password" FontSize="16"/>
+            </Hyperlink>
+        </TextBlock>
+        <mah:MetroProgressBar Grid.Row="6" Grid.ColumnSpan="2" VerticalAlignment="Bottom" IsIndeterminate="{Binding IsBusy}" />
+
     </Grid>
 </UserControl>
