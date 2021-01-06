@@ -17,13 +17,15 @@ namespace NS.Client.Modules.ModuleName
 
         public void OnInitialized(IContainerProvider containerProvider)
         {
-            _regionManager.RequestNavigate(RegionNames.ContentRegion, "ViewLogin");
+            _regionManager.RequestNavigate(RegionNames.MainRegion, "ViewDashboard"); // "ViewLogin");
         }
 
         public void RegisterTypes(IContainerRegistry containerRegistry)
         {
             containerRegistry.RegisterForNavigation<ViewLogin>();
             containerRegistry.RegisterForNavigation<ViewDashboard>();
+            containerRegistry.RegisterForNavigation<ViewNavigation>();
+            containerRegistry.RegisterForNavigation<ViewNotification>();
         }
     }
 }

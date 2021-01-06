@@ -1,4 +1,4 @@
-﻿<UserControl x:Class="NS.Client.Modules.ModuleName.Views.ViewDashboard"
+﻿<UserControl x:Class="NS.Client.Modules.ModuleName.Views.ViewNavigation"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:local="clr-namespace:NS.Client.Modules.ModuleName.Views"
@@ -6,13 +6,17 @@
              xmlns:core="clr-namespace:NS.Client.Core;assembly=NS.Client.Core"
              xmlns:mah="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
              prism:ViewModelLocator.AutoWireViewModel="True" >
-    <Grid>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="50"/>
-            <RowDefinition/>
-        </Grid.RowDefinitions>
-
-        <ContentControl Grid.Row="0" prism:RegionManager.RegionName="{x:Static core:RegionNames.NavigationRegion}" />
-        <ContentControl Grid.Row="1" prism:RegionManager.RegionName="{x:Static core:RegionNames.ContentRegion}" />
-    </Grid>
+    <StackPanel Background="#FFBDBDBD">
+        <TextBlock>
+            <Hyperlink Command="{Binding LogoutCommand}">
+                <TextBlock Text="Logout" />
+            </Hyperlink>
+        </TextBlock>
+        
+        <TextBlock>
+            <Hyperlink Command="{Binding AccountCommand}">
+                <TextBlock Text="{Binding User.Name}" />
+            </Hyperlink>
+        </TextBlock>
+    </StackPanel>
 </UserControl>

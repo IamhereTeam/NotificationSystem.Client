@@ -45,7 +45,7 @@ namespace NS.Client.Modules.ModuleName.ViewModels
 
                 if (data.Succeeded)
                 {
-                    RegionManager.RequestNavigate(RegionNames.ContentRegion, "ViewDashboard");
+                    RegionManager.RequestNavigate(RegionNames.MainRegion, "ViewDashboard");
                     return;
                 }
 

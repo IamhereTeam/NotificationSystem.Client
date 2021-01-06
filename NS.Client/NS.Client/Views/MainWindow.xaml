@@ -7,6 +7,6 @@
         xmlns:mah="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
         Title="{Binding Title}" Height="550" Width="900" WindowStartupLocation="CenterScreen">
     <Grid>
-        <ContentControl prism:RegionManager.RegionName="{x:Static core:RegionNames.ContentRegion}" />
+        <ContentControl prism:RegionManager.RegionName="{x:Static core:RegionNames.MainRegion}" />
     </Grid>
 </mah:MetroWindow>

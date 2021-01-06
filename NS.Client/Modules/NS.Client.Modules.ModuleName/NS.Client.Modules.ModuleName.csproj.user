@@ -8,12 +8,24 @@
     <Compile Update="Views\ViewLogin.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="Views\ViewNavigation.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\ViewNotification.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Page Update="Views\ViewDashboard.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Views\ViewLogin.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\ViewNavigation.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\ViewNotification.xaml">
       <SubType>Designer</SubType>
     </Page>
   </ItemGroup>
