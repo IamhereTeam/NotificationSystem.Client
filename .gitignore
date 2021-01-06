@@ -14,3 +14,4 @@
 /NS.Client/Services/NS.Client.Services.Interfaces/bin/Debug/netstandard2.1
 /NS.Client/Services/NS.Client.Services.Interfaces/obj
 /NS.Client/Tests/NS.Client.Modules.ModuleName.Tests/obj
+/NS.Client/Tests/NS.Client.Modules.ModuleName.Tests/bin/Debug/netcoreapp3.1

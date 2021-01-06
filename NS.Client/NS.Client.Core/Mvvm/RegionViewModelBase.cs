@@ -5,6 +5,13 @@ namespace NS.Client.Core.Mvvm
 {
     public class RegionViewModelBase : ViewModelBase, INavigationAware, IConfirmNavigationRequest
     {
+        private bool _isBusy;
+        public bool IsBusy
+        {
+            get { return _isBusy; }
+            set { SetProperty(ref _isBusy, value); }
+        }
+
         protected IRegionManager RegionManager { get; private set; }
 
         public RegionViewModelBase(IRegionManager regionManager)

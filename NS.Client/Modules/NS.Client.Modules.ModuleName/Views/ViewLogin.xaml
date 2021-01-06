@@ -3,22 +3,37 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:local="clr-namespace:NS.Client.Modules.ModuleName.Views"
              xmlns:prism="http://prismlibrary.com/"
+             xmlns:mah="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
              prism:ViewModelLocator.AutoWireViewModel="True" >
+
     <Grid Background="#FFBDBDBD">
-       
-        <Grid Background="White" Height="500" Width="500">
+
+        <Grid Background="White" Height="350" Width="500">
             <Grid.ColumnDefinitions>
-                <ColumnDefinition/>
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
             <Grid.RowDefinitions>
-                <RowDefinition Height="100"/>
-                <RowDefinition/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="50"/>
+                <RowDefinition Height="50"/>
+                <RowDefinition Height="50"/>
+                <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
-       
-            <TextBlock Grid.ColumnSpan="2" Text="View" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="24" />
 
-            <TextBox/>
+            <TextBlock Text="Login" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="35" />
+
+            <TextBox Grid.Row="1" mah:TextBoxHelper.Watermark="Username" Margin="80 5" VerticalContentAlignment="Center"
+                     Text="{Binding Username, UpdateSourceTrigger=PropertyChanged}"/>
+            <PasswordBox Grid.Row="2" mah:TextBoxHelper.Watermark="Password" Margin="80 5" VerticalContentAlignment="Center" mah:TextBoxHelper.ClearTextButton="True"
+                      x:Name="textBoxPassword"/>
+            
+            <Button Grid.Row="3" Content="Log In" Margin="80 5" IsDefault="True"
+                    Command="{Binding LoginCommand}" CommandParameter="{Binding ElementName=textBoxPassword}"/>
+
+            <TextBlock Grid.Row="4" Foreground="OrangeRed" HorizontalAlignment="Center" VerticalAlignment="Center" 
+                       Text="{Binding ValidationMessage}"/>
+
+            <mah:MetroProgressBar Grid.Row="4" VerticalAlignment="Bottom" IsIndeterminate="{Binding IsBusy}" />
         </Grid>
     </Grid>
 </UserControl>

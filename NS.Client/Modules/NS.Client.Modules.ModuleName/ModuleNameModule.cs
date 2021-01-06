@@ -22,8 +22,8 @@ namespace NS.Client.Modules.ModuleName
 
         public void RegisterTypes(IContainerRegistry containerRegistry)
         {
-            containerRegistry.RegisterForNavigation<ViewA>();
             containerRegistry.RegisterForNavigation<ViewLogin>();
+            containerRegistry.RegisterForNavigation<ViewDashboard>();
         }
     }
 }

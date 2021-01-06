@@ -1,10 +1,10 @@
-﻿using NS.Client.Modules.ModuleName;
-using NS.Client.Services;
-using NS.Client.Services.Interfaces;
-using NS.Client.Views;
-using Prism.Ioc;
-using Prism.Modularity;
+﻿using Prism.Ioc;
 using System.Windows;
+using NS.Client.Views;
+using Prism.Modularity;
+using NS.Client.Services;
+using NS.Client.Modules.ModuleName;
+using NS.Client.Services.Interfaces;
 
 namespace NS.Client
 {
@@ -20,7 +20,11 @@ namespace NS.Client
 
         protected override void RegisterTypes(IContainerRegistry containerRegistry)
         {
-            containerRegistry.RegisterSingleton<IMessageService, MessageService>();
+            var endPoint = "https://localhost:5001/";
+            NSApiClient httpClient = new NSApiClient(endPoint);
+
+            containerRegistry.RegisterInstance<NSApiClient>(httpClient);
+            containerRegistry.RegisterSingleton<IAccountService, AccountService>();
         }
 
         protected override void ConfigureModuleCatalog(IModuleCatalog moduleCatalog)

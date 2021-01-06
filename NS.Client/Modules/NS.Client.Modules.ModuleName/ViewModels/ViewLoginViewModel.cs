@@ -1,27 +1,72 @@
-﻿using NS.Client.Core.Mvvm;
+﻿using Prism.Regions;
+using NS.Client.Core;
+using Prism.Commands;
+using NS.Client.Core.Mvvm;
+using System.Windows.Controls;
 using NS.Client.Services.Interfaces;
-using Prism.Regions;
 
 namespace NS.Client.Modules.ModuleName.ViewModels
 {
     public class ViewLoginViewModel : RegionViewModelBase
     {
-        private string _message;
-        public string Message
+        public DelegateCommand<PasswordBox> LoginCommand { get; private set; }
+
+        private readonly IAccountService _accountService;
+
+        private string _username;
+        public string Username
         {
-            get { return _message; }
-            set { SetProperty(ref _message, value); }
+            get { return _username; }
+            set { SetProperty(ref _username, value); }
         }
 
-        public ViewLoginViewModel(IRegionManager regionManager, IMessageService messageService) :
+        private string _validationMessage;
+        public string ValidationMessage
+        {
+            get { return _validationMessage; }
+            set { SetProperty(ref _validationMessage, value); }
+        }
+
+        public ViewLoginViewModel(IRegionManager regionManager, IAccountService accountService) :
             base(regionManager)
         {
-            Message = messageService.GetMessage();
+            LoginCommand = new DelegateCommand<PasswordBox>(Login);
+            _accountService = accountService;
+        }
+
+        private async void Login(PasswordBox password)
+        {
+            IsBusy = true;
+            try
+            {
+                ValidationMessage = string.Empty;
+
+                var data = await _accountService.Login(Username, password.Password);
+
+                if (data.Succeeded)
+                {
+                    RegionManager.RequestNavigate(RegionNames.ContentRegion, "ViewDashboard");
+                    return;
+                }
+
+                if (data.StatusCode == System.Net.HttpStatusCode.Unauthorized)
+                {
+                    ValidationMessage = "Username or password is incorrect";
+                    return;
+                }
+            }
+            catch { }
+            finally
+            {
+                IsBusy = false;
+            }
+
+            ValidationMessage = "Something went wrong, please contact support";
         }
 
         public override void OnNavigatedTo(NavigationContext navigationContext)
         {
-            //do something
+            // Here we can get the JWT from local storage and automatically login
         }
     }
 }

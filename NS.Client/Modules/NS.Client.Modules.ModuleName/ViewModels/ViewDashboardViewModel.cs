@@ -1,10 +1,9 @@
-﻿using NS.Client.Core.Mvvm;
-using NS.Client.Services.Interfaces;
-using Prism.Regions;
+﻿using Prism.Regions;
+using NS.Client.Core.Mvvm;
 
 namespace NS.Client.Modules.ModuleName.ViewModels
 {
-    public class ViewAViewModel : RegionViewModelBase
+    public class ViewDashboardViewModel : RegionViewModelBase
     {
         private string _message;
         public string Message
@@ -13,10 +12,9 @@ namespace NS.Client.Modules.ModuleName.ViewModels
             set { SetProperty(ref _message, value); }
         }
 
-        public ViewAViewModel(IRegionManager regionManager, IMessageService messageService) :
+        public ViewDashboardViewModel(IRegionManager regionManager) :
             base(regionManager)
         {
-            Message = messageService.GetMessage();
         }
 
         public override void OnNavigatedTo(NavigationContext navigationContext)
