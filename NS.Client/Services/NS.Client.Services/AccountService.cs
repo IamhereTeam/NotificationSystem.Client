@@ -28,5 +28,10 @@ namespace NS.Client.Services
         {
             return _apiClient.GetAsync<UserModel>("api/Acount", CancellationToken.None);
         }
+
+        public Task<Result<UserSettingsModel>> GetAcountSettings()
+        {
+            throw new System.NotImplementedException();
+        }
     }
 }
