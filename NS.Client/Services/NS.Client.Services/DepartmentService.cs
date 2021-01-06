@@ -17,7 +17,7 @@ namespace NS.Client.Services
 
         public Task<Result<IEnumerable<DepartmentModel>>> GetAll()
         {
-            throw new System.NotImplementedException();
+            return _apiClient.GetAsync<IEnumerable<DepartmentModel>>("api/Department", CancellationToken.None);
         }
     }
 }

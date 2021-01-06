@@ -31,17 +31,17 @@ namespace NS.Client.Services
 
         public Task<Result<UserSettingsModel>> GetAcountSettings()
         {
-            throw new System.NotImplementedException();
+            return _apiClient.GetAsync<UserSettingsModel>("api/Acount/Settings", CancellationToken.None);
         }
 
         public Task<Result<UserModel>> UpdateAcount(UserModel userModel)
         {
-            throw new System.NotImplementedException();
+            return _apiClient.PostAsync<UserModel, UserModel>("api/Acount/", userModel, CancellationToken.None);
         }
 
         public Task<Result<UserSettingsModel>> UpdateAcountSettings(UserSettingsModel userSettings)
         {
-            throw new System.NotImplementedException();
+            return _apiClient.PostAsync<UserSettingsModel, UserSettingsModel>("api/Acount/Settings", userSettings, CancellationToken.None);
         }
     }
 }

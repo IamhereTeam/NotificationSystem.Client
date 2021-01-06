@@ -25,8 +25,8 @@ namespace NS.Client
             NSApiClient httpClient = new NSApiClient(endPoint);
 
             containerRegistry.RegisterInstance<NSApiClient>(httpClient);
-            containerRegistry.RegisterSingleton<IAccountService, MockAccountService>();
-            containerRegistry.RegisterSingleton<IDepartmentService, MockDepartmentService>();
+            containerRegistry.RegisterSingleton<IAccountService, AccountService>();
+            containerRegistry.RegisterSingleton<IDepartmentService, DepartmentService>();
         }
 
         protected override void ConfigureModuleCatalog(IModuleCatalog moduleCatalog)

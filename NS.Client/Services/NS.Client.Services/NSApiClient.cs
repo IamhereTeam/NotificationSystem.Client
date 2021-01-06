@@ -96,5 +96,27 @@ namespace NS.Client.Services
                 return new Result<Tout>().Failed(message: requestUri, exception: ex);
             }
         }
+
+        public async Task<Result<Tout>> PutAsync<Tin, Tout>(string requestUri, Tin data, CancellationToken cancellationToken)
+        {
+            try
+            {
+                var response = await _httpClient.PutAsJsonAsync(requestUri, data, cancellationToken).ConfigureAwait(false);
+
+                if (response.IsSuccessStatusCode)
+                {
+                    var result = await response.Content.ReadAsAsync<Tout>(cancellationToken).ConfigureAwait(false);
+
+                    return new Result<Tout>().Succeed(result);
+                }
+
+                return new Result<Tout>().Failed(response.StatusCode, message: requestUri);
+            }
+            catch (Exception ex)
+            {
+                return new Result<Tout>().Failed(message: requestUri, exception: ex);
+            }
+        }
+
     }
 }

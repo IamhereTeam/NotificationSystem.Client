@@ -10,5 +10,6 @@ namespace NS.Client.Services.Interfaces
         Task<Result> Logout();
         Task<Result<Tout>> GetAsync<Tout>(string requestUri, CancellationToken cancellationToken);
         Task<Result<Tout>> PostAsync<Tin, Tout>(string requestUri, Tin data, CancellationToken cancellationToken);
+        Task<Result<Tout>> PutAsync<Tin, Tout>(string requestUri, Tin data, CancellationToken cancellationToken);
     }
 }
