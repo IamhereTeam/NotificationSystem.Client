@@ -3,6 +3,7 @@ using System.Windows;
 using NS.Client.Views;
 using Prism.Modularity;
 using NS.Client.Services;
+using NS.Client.Services.Mock;
 using NS.Client.Modules.ModuleName;
 using NS.Client.Services.Interfaces;
 
@@ -24,7 +25,7 @@ namespace NS.Client
             NSApiClient httpClient = new NSApiClient(endPoint);
 
             containerRegistry.RegisterInstance<NSApiClient>(httpClient);
-            containerRegistry.RegisterSingleton<IAccountService, AccountService>();
+            containerRegistry.RegisterSingleton<IAccountService, MockAccountService>();
         }
 
         protected override void ConfigureModuleCatalog(IModuleCatalog moduleCatalog)

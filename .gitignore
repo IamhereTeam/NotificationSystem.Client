@@ -15,3 +15,5 @@
 /NS.Client/Services/NS.Client.Services.Interfaces/obj
 /NS.Client/Tests/NS.Client.Modules.ModuleName.Tests/obj
 /NS.Client/Tests/NS.Client.Modules.ModuleName.Tests/bin/Debug/netcoreapp3.1
+/NS.Client.Services.Mock/bin/Debug/netcoreapp3.1
+/NS.Client.Services.Mock/obj

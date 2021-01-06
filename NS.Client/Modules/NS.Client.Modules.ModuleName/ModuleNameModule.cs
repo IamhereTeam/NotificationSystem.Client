@@ -17,7 +17,8 @@ namespace NS.Client.Modules.ModuleName
 
         public void OnInitialized(IContainerProvider containerProvider)
         {
-            _regionManager.RequestNavigate(RegionNames.MainRegion, "ViewDashboard"); // "ViewLogin");
+            _regionManager.RequestNavigate(RegionNames.MainRegion, "ViewLogin"); 
+            //_regionManager.RequestNavigate(RegionNames.MainRegion, "ViewDashboard"); 
         }
 
         public void RegisterTypes(IContainerRegistry containerRegistry)

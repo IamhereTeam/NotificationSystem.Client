@@ -28,6 +28,12 @@ namespace NS.Client.Services
             }
         }
 
+        public Task<Result> Logout()
+        {
+            _httpClient.DefaultRequestHeaders.Accept.Clear();
+            return Task.FromResult(new Result().Succeed());
+        }
+
         public async Task<Result> Login(string username, string password)
         {
             var body = new AuthenticateRequest { Username = username, Password = password };

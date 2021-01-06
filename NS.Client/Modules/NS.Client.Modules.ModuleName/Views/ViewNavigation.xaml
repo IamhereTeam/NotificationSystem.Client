@@ -5,18 +5,24 @@
              xmlns:prism="http://prismlibrary.com/"
              xmlns:core="clr-namespace:NS.Client.Core;assembly=NS.Client.Core"
              xmlns:mah="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
-             prism:ViewModelLocator.AutoWireViewModel="True" >
-    <StackPanel Background="#FFBDBDBD">
-        <TextBlock>
+             prism:ViewModelLocator.AutoWireViewModel="True" FontSize="15">
+    
+    <Grid Background="#FFBDBDBD">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="auto"/>
+        </Grid.ColumnDefinitions>
+        <TextBlock Grid.Column="1" Margin="30 0" VerticalAlignment="Center">
+            <Hyperlink Command="{Binding AccountCommand}">
+                <TextBlock Text="{Binding UserFullName}" />
+            </Hyperlink>
+        </TextBlock>
+
+        <TextBlock Grid.Column="2" Margin="30 0" VerticalAlignment="Center">
             <Hyperlink Command="{Binding LogoutCommand}">
                 <TextBlock Text="Logout" />
             </Hyperlink>
         </TextBlock>
-        
-        <TextBlock>
-            <Hyperlink Command="{Binding AccountCommand}">
-                <TextBlock Text="{Binding User.Name}" />
-            </Hyperlink>
-        </TextBlock>
-    </StackPanel>
+    </Grid>
 </UserControl>

@@ -30,8 +30,8 @@ namespace NS.Client.Modules.ModuleName.ViewModels
         public ViewLoginViewModel(IRegionManager regionManager, IAccountService accountService) :
             base(regionManager)
         {
-            LoginCommand = new DelegateCommand<PasswordBox>(Login);
             _accountService = accountService;
+            LoginCommand = new DelegateCommand<PasswordBox>(Login);
         }
 
         private async void Login(PasswordBox password)

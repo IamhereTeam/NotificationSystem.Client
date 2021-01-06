@@ -21,6 +21,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NS.Client", "NS.Client\NS.C
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NS.Client.Core", "NS.Client\NS.Client.Core\NS.Client.Core.csproj", "{3CCA6CF3-41C8-4653-9F2C-2E1EF5CE3F1B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NS.Client.Services.Mock", "NS.Client.Services.Mock\NS.Client.Services.Mock.csproj", "{5FB18970-30AE-4FFE-A38F-1D97061288BC}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -51,6 +53,10 @@ Global
 		{3CCA6CF3-41C8-4653-9F2C-2E1EF5CE3F1B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3CCA6CF3-41C8-4653-9F2C-2E1EF5CE3F1B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3CCA6CF3-41C8-4653-9F2C-2E1EF5CE3F1B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5FB18970-30AE-4FFE-A38F-1D97061288BC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5FB18970-30AE-4FFE-A38F-1D97061288BC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5FB18970-30AE-4FFE-A38F-1D97061288BC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5FB18970-30AE-4FFE-A38F-1D97061288BC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -60,6 +66,7 @@ Global
 		{860A6112-F796-4581-9FC7-2AB7989661A8} = {B9A2DBB6-96D9-474E-A3DA-EA037C675501}
 		{4B399126-ECEF-4707-8055-A914626D3F88} = {7BD4DBEE-42CA-458D-A3BF-451FD85FED90}
 		{32B8A8F8-6598-462A-BF37-68EB8EDB712F} = {7BD4DBEE-42CA-458D-A3BF-451FD85FED90}
+		{5FB18970-30AE-4FFE-A38F-1D97061288BC} = {7BD4DBEE-42CA-458D-A3BF-451FD85FED90}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {1C6C5366-50B2-4E5B-995B-06B8FA18D75E}
