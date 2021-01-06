@@ -7,6 +7,31 @@
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
     <Grid>
-        <TextBlock Text="ViewNotification"/>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        
+        <ListBox Grid.Column="0" ItemsSource="{Binding AllDepartments}" SelectedItem="{Binding SelectedDepartment}">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                        <TextBlock Text="{Binding Name}" />
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+
+        <Border Grid.Column="1" Margin="20 5" BorderBrush="#FFCCCCCC" BorderThickness="1">
+            <StackPanel>
+                <TextBlock Grid.Row="0" Grid.ColumnSpan="2" Text="Notification Settings" Background="#FFCCCCCC" Height="35" Padding="5"/>
+                <DataGrid CanUserAddRows="False" AutoGenerateColumns="False" HeadersVisibility="All" IsReadOnly="True"
+                     ItemsSource="{Binding Notifications}">
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Header="Id" Binding="{Binding Id}"/>
+                        <DataGridCheckBoxColumn Header="Is Enabled" Binding="{Binding IsEnabled}" />
+                    </DataGrid.Columns>
+                </DataGrid>
+            </StackPanel>
+        </Border>
+
     </Grid>
 </UserControl>

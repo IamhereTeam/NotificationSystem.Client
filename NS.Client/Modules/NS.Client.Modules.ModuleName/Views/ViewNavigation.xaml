@@ -13,6 +13,13 @@
             <ColumnDefinition Width="auto"/>
             <ColumnDefinition Width="auto"/>
         </Grid.ColumnDefinitions>
+
+        <TextBlock Grid.Column="0" Margin="30 0" VerticalAlignment="Center">
+            <Hyperlink Command="{Binding NotificationsCommand}">
+                <TextBlock Text="Notifications" />
+            </Hyperlink>
+        </TextBlock>
+        
         <TextBlock Grid.Column="1" Margin="30 0" VerticalAlignment="Center">
             <Hyperlink Command="{Binding AccountCommand}">
                 <TextBlock Text="{Binding UserFullName}" />

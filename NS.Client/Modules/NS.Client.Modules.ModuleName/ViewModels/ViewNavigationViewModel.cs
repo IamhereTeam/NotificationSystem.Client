@@ -3,6 +3,7 @@ using Prism.Commands;
 using NS.Client.Core;
 using NS.Client.Core.Mvvm;
 using NS.Client.Services.Interfaces;
+using System;
 
 namespace NS.Client.Modules.ModuleName.ViewModels
 {
@@ -11,7 +12,8 @@ namespace NS.Client.Modules.ModuleName.ViewModels
         private readonly IAccountService _accountService;
         public DelegateCommand LogoutCommand { get; private set; }
         public DelegateCommand AccountCommand { get; private set; }
-
+        public DelegateCommand NotificationsCommand { get; private set; }
+        
         private string _userFullName;
         public string UserFullName
         {
@@ -25,6 +27,12 @@ namespace NS.Client.Modules.ModuleName.ViewModels
             _accountService = accountService;
             LogoutCommand = new DelegateCommand(Logout);
             AccountCommand = new DelegateCommand(Account);
+            NotificationsCommand = new DelegateCommand(Notifications);
+        }
+
+        private void Notifications()
+        {
+            RegionManager.RequestNavigate(RegionNames.ContentRegion, "ViewNotification");
         }
 
         private void Account()
