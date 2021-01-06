@@ -8,5 +8,6 @@ namespace NS.Client.Services.Interfaces
         Task<Result> Login(string sername, string password);
         Task<Result> Logout();
         Task<Result<UserModel>> GetAcount();
+        Task<Result<UserSettingsModel>> GetAcountSettings();
     }
 }

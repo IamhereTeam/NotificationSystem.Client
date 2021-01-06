@@ -29,7 +29,7 @@ namespace NS.Client.Modules.ModuleName.ViewModels
 
         private void Account()
         {
-            RegionManager.RequestNavigate(RegionNames.MainRegion, "ViewAccount");
+            RegionManager.RequestNavigate(RegionNames.ContentRegion, "ViewAccount");
         }
 
         private async void Logout()

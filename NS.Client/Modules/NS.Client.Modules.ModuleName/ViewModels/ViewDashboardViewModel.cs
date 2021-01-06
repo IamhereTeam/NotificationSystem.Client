@@ -6,13 +6,6 @@ namespace NS.Client.Modules.ModuleName.ViewModels
 {
     public class ViewDashboardViewModel : RegionViewModelBase
     {
-        private string _message;
-        public string Message
-        {
-            get { return _message; }
-            set { SetProperty(ref _message, value); }
-        }
-
         public ViewDashboardViewModel(IRegionManager regionManager) :
             base(regionManager)
         {
