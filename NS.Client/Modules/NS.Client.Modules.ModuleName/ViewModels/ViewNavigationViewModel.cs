@@ -12,8 +12,9 @@ namespace NS.Client.Modules.ModuleName.ViewModels
         private readonly IAccountService _accountService;
         public DelegateCommand LogoutCommand { get; private set; }
         public DelegateCommand AccountCommand { get; private set; }
-        public DelegateCommand NotificationsCommand { get; private set; }
-        
+        public DelegateCommand ViewNotificationsCommand { get; private set; }
+        public DelegateCommand NewNotificationCommand { get; private set; }
+
         private string _userFullName;
         public string UserFullName
         {
@@ -27,10 +28,16 @@ namespace NS.Client.Modules.ModuleName.ViewModels
             _accountService = accountService;
             LogoutCommand = new DelegateCommand(Logout);
             AccountCommand = new DelegateCommand(Account);
-            NotificationsCommand = new DelegateCommand(Notifications);
+            ViewNotificationsCommand = new DelegateCommand(ViewNotifications);
+            NewNotificationCommand = new DelegateCommand(NewNotification);
         }
 
-        private void Notifications()
+        private void NewNotification()
+        {
+            RegionManager.RequestNavigate(RegionNames.ContentRegion, "NewNotification");
+        }
+
+        private void ViewNotifications()
         {
             RegionManager.RequestNavigate(RegionNames.ContentRegion, "ViewNotification");
         }

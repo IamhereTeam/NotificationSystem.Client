@@ -9,24 +9,32 @@
     
     <Grid Background="#FFBDBDBD">
         <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="auto"/>
             <ColumnDefinition/>
             <ColumnDefinition Width="auto"/>
             <ColumnDefinition Width="auto"/>
         </Grid.ColumnDefinitions>
 
         <TextBlock Grid.Column="0" Margin="30 0" VerticalAlignment="Center">
-            <Hyperlink Command="{Binding NotificationsCommand}">
-                <TextBlock Text="Notifications" />
+            <Hyperlink Command="{Binding ViewNotificationsCommand}">
+                <TextBlock Text="View Notifications" />
             </Hyperlink>
         </TextBlock>
-        
+
         <TextBlock Grid.Column="1" Margin="30 0" VerticalAlignment="Center">
+            <Hyperlink Command="{Binding NewNotificationCommand}">
+                <TextBlock Text="New Notification" />
+            </Hyperlink>
+        </TextBlock>
+
+        <TextBlock Grid.Column="3" Margin="30 0" VerticalAlignment="Center">
             <Hyperlink Command="{Binding AccountCommand}">
                 <TextBlock Text="{Binding UserFullName}" />
             </Hyperlink>
         </TextBlock>
 
-        <TextBlock Grid.Column="2" Margin="30 0" VerticalAlignment="Center">
+        <TextBlock Grid.Column="4" Margin="30 0" VerticalAlignment="Center">
             <Hyperlink Command="{Binding LogoutCommand}">
                 <TextBlock Text="Logout" />
             </Hyperlink>

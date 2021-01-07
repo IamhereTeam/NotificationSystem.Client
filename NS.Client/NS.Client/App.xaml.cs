@@ -26,13 +26,13 @@ namespace NS.Client
 
             containerRegistry.RegisterInstance<NSApiClient>(httpClient);
 
-            //containerRegistry.RegisterSingleton<IAccountService, MockAccountService>();
-            //containerRegistry.RegisterSingleton<IDepartmentService, MockDepartmentService>();
-            //containerRegistry.RegisterSingleton<INotificationService, MockNotificationService>();
+            containerRegistry.RegisterSingleton<IAccountService, MockAccountService>();
+            containerRegistry.RegisterSingleton<IDepartmentService, MockDepartmentService>();
+            containerRegistry.RegisterSingleton<INotificationService, MockNotificationService>();
 
-            containerRegistry.RegisterSingleton<IAccountService, AccountService>();
-            containerRegistry.RegisterSingleton<IDepartmentService, DepartmentService>();
-            containerRegistry.RegisterSingleton<INotificationService, NotificationService>();
+            //containerRegistry.RegisterSingleton<IAccountService, AccountService>();
+            //containerRegistry.RegisterSingleton<IDepartmentService, DepartmentService>();
+            //containerRegistry.RegisterSingleton<INotificationService, NotificationService>();
         }
 
         protected override void ConfigureModuleCatalog(IModuleCatalog moduleCatalog)
