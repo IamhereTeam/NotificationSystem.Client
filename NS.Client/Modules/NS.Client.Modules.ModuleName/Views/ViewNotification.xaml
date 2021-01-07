@@ -23,8 +23,17 @@
                 CanUserAddRows="False" AutoGenerateColumns="False" HeadersVisibility="All" IsReadOnly="True"
                     ItemsSource="{Binding Notifications}">
             <DataGrid.Columns>
-                <DataGridTextColumn Header="Date" Binding="{Binding Date, StringFormat=d}"/>
-                <DataGridTextColumn Header="Sender" Binding="{Binding Sender.Username}" />
+                <DataGridTextColumn Header="Date" Binding="{Binding Date, StringFormat=g}"/>
+                <DataGridTextColumn Header="Sender">
+                    <DataGridTextColumn.Binding>
+                        <MultiBinding StringFormat="{}{0} {1} [{2}]">
+                            <Binding Path="Sender.FirstName" />
+                            <Binding Path="Sender.LastName" />
+                            <Binding Path="Sender.Username" />
+                        </MultiBinding>
+                    </DataGridTextColumn.Binding>
+                </DataGridTextColumn>
+                <DataGridTextColumn Header="From" Binding="{Binding Sender.Department.Name}" />
                 <DataGridTextColumn Header="Subject" Binding="{Binding Subject}" />
                 <DataGridTextColumn Header="Message" Binding="{Binding Message}" Width="450"/>
             </DataGrid.Columns>
