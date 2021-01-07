@@ -19,5 +19,10 @@ namespace NS.Client.Services
         {
             return _apiClient.GetAsync<IEnumerable<UserNotificationModel>>("api/Notification", CancellationToken.None);
         }
+
+        public Task<Result<CreateNotificationModel>> Create(CreateNotificationModel newNotificationModel)
+        {
+            return _apiClient.PostAsync<CreateNotificationModel, CreateNotificationModel>("api/Notification", newNotificationModel, CancellationToken.None);
+        }
     }
 }

@@ -34,7 +34,7 @@ namespace NS.Client.Modules.ModuleName.ViewModels
 
         private void NewNotification()
         {
-            RegionManager.RequestNavigate(RegionNames.ContentRegion, "NewNotification");
+            RegionManager.RequestNavigate(RegionNames.ContentRegion, "ViewNewNotification");
         }
 
         private void ViewNotifications()

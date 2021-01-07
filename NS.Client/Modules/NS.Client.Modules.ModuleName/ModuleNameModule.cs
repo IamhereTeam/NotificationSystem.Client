@@ -27,6 +27,7 @@ namespace NS.Client.Modules.ModuleName
             containerRegistry.RegisterForNavigation<ViewDashboard>();
             containerRegistry.RegisterForNavigation<ViewNavigation>();
             containerRegistry.RegisterForNavigation<ViewNotification>();
+            containerRegistry.RegisterForNavigation<ViewNewNotification>();
             containerRegistry.RegisterForNavigation<ViewAccount>();
         }
     }

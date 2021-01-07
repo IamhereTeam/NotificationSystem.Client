@@ -9,6 +9,11 @@ namespace NS.Client.Services.Mock
 {
     public class MockNotificationService : INotificationService
     {
+        public Task<Result<CreateNotificationModel>> Create(CreateNotificationModel newNotificationModel)
+        {
+            return Task.FromResult(new Result<CreateNotificationModel>().Succeed(newNotificationModel));
+        }
+
         public Task<Result<IEnumerable<UserNotificationModel>>> GetAll()
         {
             var userModel = new UserModel

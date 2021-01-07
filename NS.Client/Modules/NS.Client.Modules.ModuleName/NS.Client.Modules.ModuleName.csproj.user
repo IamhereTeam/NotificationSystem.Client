@@ -14,6 +14,9 @@
     <Compile Update="Views\ViewNavigation.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="Views\ViewNewNotification.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Views\ViewNotification.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -29,6 +32,9 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Views\ViewNavigation.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\ViewNewNotification.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Views\ViewNotification.xaml">

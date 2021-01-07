@@ -7,7 +7,7 @@
              xmlns:mah="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
              prism:ViewModelLocator.AutoWireViewModel="True" FontSize="14">
 
-    <Grid Height="450" Width="750">
+    <Grid Height="450" Width="800">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="200"/>
             <ColumnDefinition/>
@@ -23,7 +23,7 @@
         </Grid.RowDefinitions>
         <TextBlock Grid.Row="0" Grid.ColumnSpan="2" Text="New Notification" HorizontalAlignment="Center" FontSize="20"/>
 
-        <Border Grid.Row="1" Grid.Column="0" Grid.RowSpan="4" Margin="20 5" BorderBrush="#FFCCCCCC" BorderThickness="1">
+        <Border Grid.Row="1" Grid.Column="0" Grid.RowSpan="4" Margin="10 5" BorderBrush="#FFCCCCCC" BorderThickness="1">
             <StackPanel>
                 <TextBlock Grid.Row="0" Grid.ColumnSpan="2" Text="Choose from templates" Background="#FFCCCCCC" Height="30" Padding="5"/>
                 <ListBox Grid.Column="0" ItemsSource="{Binding NotificationTemplates}" SelectedItem="{Binding SelectedTemplate}">
@@ -36,10 +36,14 @@
             </StackPanel>
         </Border>
 
-        <TextBox Grid.Column="1" Grid.Row="1" Text="{Binding Account.FirstName}" Margin="20 5" VerticalContentAlignment="Center" FontSize="15"/>
-        <TextBox Grid.Column="1" Grid.Row="2" Text="{Binding Account.LastName}" Margin="20 5" VerticalContentAlignment="Center" FontSize="15"/>
-        <TextBox Grid.Column="1" Grid.Row="3" Text="{Binding Subject}" Margin="20 5" VerticalContentAlignment="Center" FontSize="15"/>
-        <TextBox Grid.Column="1" Grid.Row="4" Text="{Binding Message}" Margin="20 5" VerticalContentAlignment="Center" FontSize="15" TextWrapping="Wrap" AcceptsReturn="True"/>
+        <TextBox Grid.Column="1" Grid.Row="1" Text="{Binding Departments}" mah:TextBoxHelper.Watermark="Departments ex: 1,7"
+                 Margin="20 5" VerticalContentAlignment="Center" FontSize="15"/>
+        <TextBox Grid.Column="1" Grid.Row="2" Text="{Binding Users}" mah:TextBoxHelper.Watermark="Users ex: 1,5,17"
+                 Margin="20 5" VerticalContentAlignment="Center" FontSize="15"/>
+        <TextBox Grid.Column="1" Grid.Row="3" Text="{Binding Subject}" mah:TextBoxHelper.Watermark="Subject"
+                 Margin="20 5" VerticalContentAlignment="Center" FontSize="15"/>
+        <TextBox Grid.Column="1" Grid.Row="4" Text="{Binding Message}" mah:TextBoxHelper.Watermark="Message"
+                 Margin="20 5" FontSize="15" TextWrapping="Wrap" AcceptsReturn="True" VerticalScrollBarVisibility="Auto"/>
 
 
         <Button Grid.Row="5" Grid.Column="2" Content="Send" Margin="20 5" Width="200" HorizontalAlignment="Right" 
