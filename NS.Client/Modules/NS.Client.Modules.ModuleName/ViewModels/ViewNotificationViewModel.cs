@@ -18,7 +18,7 @@ namespace NS.Client.Modules.ModuleName.ViewModels
         private ObservableCollection<UserNotificationModel> _notifications;
         public ObservableCollection<UserNotificationModel> Notifications
         {
-            get { return _notifications.Where(Filter).ToObservable(); }
+            get { return _notifications?.Where(Filter)?.ToObservable(); }
             set { SetProperty(ref _notifications, value); }
         }
 
