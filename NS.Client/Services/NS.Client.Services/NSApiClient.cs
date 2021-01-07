@@ -11,6 +11,11 @@ namespace NS.Client.Services
 {
     public class NSApiClient : INSApiClient
     {
+        // move to RestSharp
+        // https://www.nuget.org/packages/RestSharp
+        // https://restsharp.dev/
+
+
         private readonly HttpClient _httpClient;
 
         public NSApiClient(string baseAddress, string jwt = default)

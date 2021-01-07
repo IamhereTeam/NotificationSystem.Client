@@ -4,4 +4,8 @@
     <TargetFramework>netcoreapp3.1</TargetFramework>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\NS.Client.Services.Interfaces\NS.Client.Services.Interfaces.csproj" />
+  </ItemGroup>
+
 </Project>

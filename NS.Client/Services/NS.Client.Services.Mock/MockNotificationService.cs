@@ -20,7 +20,7 @@ namespace NS.Client.Services.Mock
                 DepartmentId = 5,
                 Department = new DepartmentModel { Id = 5, Name = "Management" }
             };
-            var message = "A 'Hello, World!' program generally is a computer program that outputs or displays the message 'Hello, World!'. Such a program is very simple in most programming languages, and is often used to illustrate the basic syntax of a programming language. It is often the first program written by people learning to code."
+            var message = "A 'Hello, World!' program generally is a computer program that outputs or displays the message 'Hello, World!'. Such a program is very simple in most programming languages, and is often used to illustrate the basic syntax of a programming language. It is often the first program written by people learning to code.";
 
             var data = new List<UserNotificationModel>
             {

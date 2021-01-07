@@ -20,3 +20,5 @@
 /NS.Client/NS.Client.Common/bin/Debug
 /NS.Client/NS.Client.Common/obj
 /NS.Client.Common/obj
+/NS.Client/Services/NS.Client.Services.Mock/bin/Debug/netcoreapp3.1
+/NS.Client/Services/NS.Client.Services.Mock/obj

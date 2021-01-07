@@ -8,7 +8,7 @@
              d:DesignHeight="450" d:DesignWidth="800">
     <Grid>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition/>
+            <ColumnDefinition Width="200"/>
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
         
@@ -20,18 +20,16 @@
             </ListBox.ItemTemplate>
         </ListBox>
 
-        <Border Grid.Column="1" Margin="20 5" BorderBrush="#FFCCCCCC" BorderThickness="1">
-            <StackPanel>
-                <TextBlock Grid.Row="0" Grid.ColumnSpan="2" Text="Notification Settings" Background="#FFCCCCCC" Height="35" Padding="5"/>
-                <DataGrid CanUserAddRows="False" AutoGenerateColumns="False" HeadersVisibility="All" IsReadOnly="True"
-                     ItemsSource="{Binding Notifications}">
-                    <DataGrid.Columns>
-                        <DataGridTextColumn Header="Id" Binding="{Binding Id}"/>
-                        <DataGridCheckBoxColumn Header="Is Enabled" Binding="{Binding IsEnabled}" />
-                    </DataGrid.Columns>
-                </DataGrid>
-            </StackPanel>
-        </Border>
+        <DataGrid Grid.Column="1" Margin="20 5" VerticalAlignment="Stretch" HorizontalAlignment="Stretch"
+                CanUserAddRows="False" AutoGenerateColumns="False" HeadersVisibility="All" IsReadOnly="True"
+                    ItemsSource="{Binding Notifications}">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Date" Binding="{Binding Date, StringFormat=d}"/>
+                <DataGridTextColumn Header="Sender" Binding="{Binding Sender.Username}" />
+                <DataGridTextColumn Header="Subject" Binding="{Binding Subject}" />
+                <DataGridTextColumn Header="Message" Binding="{Binding Message}" />
+            </DataGrid.Columns>
+        </DataGrid>
 
     </Grid>
 </UserControl>
