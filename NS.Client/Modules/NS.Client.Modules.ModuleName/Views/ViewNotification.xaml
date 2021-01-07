@@ -11,8 +11,8 @@
             <ColumnDefinition Width="200"/>
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
-        
-        <ListBox Grid.Column="0" ItemsSource="{Binding AllDepartments}" SelectedItem="{Binding SelectedDepartment}">
+
+        <ListBox Grid.Column="0" ItemsSource="{Binding FilterDepartments}" SelectedItem="{Binding SelectedDepartment}">
             <ListBox.ItemTemplate>
                 <DataTemplate>
                         <TextBlock Text="{Binding Name}" />
@@ -27,7 +27,7 @@
                 <DataGridTextColumn Header="Date" Binding="{Binding Date, StringFormat=d}"/>
                 <DataGridTextColumn Header="Sender" Binding="{Binding Sender.Username}" />
                 <DataGridTextColumn Header="Subject" Binding="{Binding Subject}" />
-                <DataGridTextColumn Header="Message" Binding="{Binding Message}" />
+                <DataGridTextColumn Header="Message" Binding="{Binding Message}" Width="450"/>
             </DataGrid.Columns>
         </DataGrid>
 

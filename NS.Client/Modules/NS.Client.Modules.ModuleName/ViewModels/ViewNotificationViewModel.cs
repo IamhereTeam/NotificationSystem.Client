@@ -1,10 +1,12 @@
-﻿using NS.DTO.Acount;
+﻿using System.Linq;
+using NS.DTO.Acount;
 using Prism.Regions;
 using NS.Client.Common;
 using NS.Client.Core.Mvvm;
 using NS.DTO.Notification;
-using System.Collections.ObjectModel;
+using System.Collections.Generic;
 using NS.Client.Services.Interfaces;
+using System.Collections.ObjectModel;
 
 namespace NS.Client.Modules.ModuleName.ViewModels
 {
@@ -16,22 +18,26 @@ namespace NS.Client.Modules.ModuleName.ViewModels
         private ObservableCollection<UserNotificationModel> _notifications;
         public ObservableCollection<UserNotificationModel> Notifications
         {
-            get { return _notifications; }
+            get { return _notifications.Where(Filter).ToObservable(); }
             set { SetProperty(ref _notifications, value); }
         }
 
-        private ObservableCollection<DepartmentModel> _allDepartments;
-        public ObservableCollection<DepartmentModel> AllDepartments
+        private ObservableCollection<DepartmentModel> _filterDepartments;
+        public ObservableCollection<DepartmentModel> FilterDepartments
         {
-            get { return _allDepartments; }
-            set { SetProperty(ref _allDepartments, value); }
+            get { return _filterDepartments; }
+            set { SetProperty(ref _filterDepartments, value); }
         }
 
-        private DepartmentModel _selectedDepartments;
-        public DepartmentModel SelectedDepartments
+        private DepartmentModel _selectedDepartment;
+        public DepartmentModel SelectedDepartment
         {
-            get { return _selectedDepartments; }
-            set { SetProperty(ref _selectedDepartments, value); }
+            get { return _selectedDepartment; }
+            set
+            {
+                SetProperty(ref _selectedDepartment, value);
+                RaisePropertyChanged(nameof(Notifications));
+            }
         }
 
         public ViewNotificationViewModel(IRegionManager regionManager, INotificationService notificationService, IDepartmentService departmentService) :
@@ -41,20 +47,24 @@ namespace NS.Client.Modules.ModuleName.ViewModels
             _departmentService = departmentService;
         }
 
+        private bool Filter(UserNotificationModel userNotification)
+        {
+            return SelectedDepartment == null || SelectedDepartment.Id == 0 || userNotification.Sender.DepartmentId == SelectedDepartment.Id;
+        }
+
         public override async void OnNavigatedTo(NavigationContext navigationContext)
         {
             var notificationResult = await _notificationService.GetAll();
             var departmentResult = await _departmentService.GetAll();
 
-            if (departmentResult.Succeeded)
-            {
-                AllDepartments = departmentResult.Data.ToObservable();
-            }
+            if (!departmentResult.Succeeded || !notificationResult.Succeeded) return;
 
-            if (notificationResult.Succeeded)
-            {
-                Notifications = notificationResult.Data.ToObservable();
-            }
+            var filterDepartments = new List<DepartmentModel> { new DepartmentModel { Id = 0, Name = "All" } };
+            filterDepartments.AddRange(departmentResult.Data);
+            FilterDepartments = filterDepartments.ToObservable();
+            SelectedDepartment = filterDepartments.First();
+
+            Notifications = notificationResult.Data.ToObservable();
         }
     }
 }
